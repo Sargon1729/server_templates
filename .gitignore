@@ -1,0 +1,8 @@
+config.sh
+.venv/
+log.txt
+__pycache__/
+*.log
+password.txt
+id_rsa
+.env
