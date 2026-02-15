@@ -6,3 +6,5 @@ __pycache__/
 password.txt
 id_rsa
 .env
+managed-keys.bind
+managed-keys.bind.jnl
