@@ -1,0 +1,28 @@
+; BIND zone file format (also called RFC 1035 master file format)
+; base zone file for sargon.local
+;
+; BIND data file for local loopback interface
+;
+
+;TTL in seconds
+$TTL 20
+
+$ORIGIN sargon.local. ; base domain-name
+
+; Start of Authority RR defining the key characteristics of the zone (domain), Name server and the domain administrator
+@ IN SOA ns1 hostmaster.sargon.local. (
+
+2003080800 ; serial number              ; serial number increases every time anything chances in the zone file, secondary servers use this number, has to be manually updated.
+12h        ; refresh                    ; how often th secondary servers check in
+15m        ; update retry               ; retry wait interval
+4d         ; expiry                     ; If the secondary cannot contact the primary for this many days, it gives up
+2h         ; minimum                    ; how long NXDOMAIN RR are cached
+)
+
+
+; Resource Records
+; "IN" meaning The Internet, the only widely used class today
+           IN      NS      ns1
+ns1        IN      A       192.169.0.3
+www        IN      A       192.168.254.7
+web        IN      A       10.0.1.5
