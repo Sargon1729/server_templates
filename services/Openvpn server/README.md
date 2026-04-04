@@ -1,6 +1,7 @@
 ## Simple OpenVPN Server
 
-This is a simple OVPN server config using only TLS authentication, ideally designed to have a firewall or a home router connect to it for IP anonymization rather than S2S connectivity.
+This is a simple OVPN server config using only TLS authentication, ideally designed to have a firewall or a home router connect to it for IP anonymization rather than S2S connectivity. You are NATed out of the same public IP you connect to.
+![alt text](image.png)
 
 Here is the final file structure.
 
@@ -12,7 +13,6 @@ Here is the final file structure.
         │   ├── ca.crt
         │   ├── server.crt
         │   ├── server.key
-        │   ├── dh.pem        (or not needed if using ECDH)
         │   ├── ta.key
         │   └── server.conf
         ├── openvpn-shutdown.sh
