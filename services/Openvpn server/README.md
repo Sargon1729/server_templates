@@ -1,6 +1,7 @@
 ## Simple OpenVPN Server
 
 This is a simple OVPN server config using only TLS authentication, ideally designed to have a firewall or a home router connect to it for IP anonymization rather than S2S connectivity. You are NATed out of the same public IP you connect to.
+
 ![alt text](image.png)
 
 Here is the final file structure.
@@ -29,8 +30,14 @@ Here is the final file structure.
 5. Enable IP forwarding `echo 'net.ipv4.ip_forward = 1' > /etc/sysctl.conf
 sysctl -p && sysctl -p`
 6. Edit the `openvpn-startup.sh` script and make changes according to your environment, that script assumes you are using 10.8.0.0/24 for your client IP pool and your outside interface is eth0
-7. Copy everything into /etc/openvpn/ and make sure root is the owner and group of everything
+7. Copy everything into /etc/openvpn/
+8. Ensure root is owner and group for everything in /etc/openvpn
+9. Run the openvpn-startup.sh script as root.
 
+
+### Logging
+
+All logging information is under /var/log/openvpn
 
 
 
