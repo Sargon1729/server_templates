@@ -1,2 +1,2 @@
-# docker_templates
-Templates of working docker container apps
+# Server Templates
+Templates of working server configurations, some in docker some not.
