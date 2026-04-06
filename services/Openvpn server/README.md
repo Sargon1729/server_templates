@@ -2,6 +2,9 @@
 
 This is a simple OVPN server config using only TLS authentication, ideally designed to have a firewall or a home router connect to it for IP anonymization rather than S2S connectivity. You are NATed out of the same public IP you connect to.
 
+> [!IMPORTANT]
+> This guide assumes you have a working PKI or are able to obtain certificates.
+
 > [!NOTE]
 > When configuring certificates, it's important to get the Extended key usage (EKU) correct. OpenVPN is picky about this. The Extended Key usage for the client cert must be ' TLS Web Client Authentication', for the server certificate, it must be 'TLS Web Server Authentication'
 
