@@ -2,6 +2,9 @@
 
 This is a simple OVPN server config using only TLS authentication, ideally designed to have a firewall or a home router connect to it for IP anonymization rather than S2S connectivity. You are NATed out of the same public IP you connect to.
 
+> [!NOTE]
+> When configuring certificates, it's important to get the Extended key usage (EKU) correct. OpenVPN is picky about this. The Extended Key usage for the client cert must be ' TLS Web Client Authentication', for the server certificate, it must be 'TLS Web Server Authentication'
+
 ![alt text](image.png)
 
 Here is the final file structure.
@@ -25,7 +28,7 @@ Here is the final file structure.
 ### Installation
 1. Install OpenVPN server https://openvpn.net/community-docs/installing-openvpn.html
 2. Clone openvpn folder of this repo somewhere in your home direcroty for easy initial editing.
-3. Generate TLS auth key `sudo tls-crypt ta.key tls-auth ta.key 0` and place in `/server`
+3. Generate TLS auth key `openvpn --genkey secret ta.key` and place in `/server`
 4. Generate/Acquire the certificate and key and place in `/server`
 5. Enable IP forwarding `echo 'net.ipv4.ip_forward = 1' > /etc/sysctl.conf
 sysctl -p && sysctl -p`
