@@ -6,7 +6,7 @@ This is a simple OVPN server config using only TLS authentication, ideally desig
 > This guide assumes you have a working PKI or are able to obtain certificates.
 
 > [!NOTE]
-> When configuring certificates, it's important to get the Extended key usage (EKU) correct. OpenVPN is picky about this. The Extended Key usage for the client cert must be ' TLS Web Client Authentication', for the server certificate, it must be 'TLS Web Server Authentication'
+> When configuring certificates, it's important to get the Extended key usage (EKU) correct. OpenVPN is picky about this. The Extended Key usage for the client cert must be ' TLS Web Client Authentication', for the server certificate, it must be 'TLS Web Server Authentication'. Also the Key Usage extension must be 'Digital Signature, Key Encipherment'
 
 ![alt text](image.png)
 
