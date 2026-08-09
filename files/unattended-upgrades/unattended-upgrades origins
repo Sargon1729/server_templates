@@ -1,0 +1,10 @@
+//PVE
+"origin=Debian,codename=${distro_codename}-updates,label=Debian";
+"origin=Proxmox,codename=${distro_codename},label=Proxmox Debian Repository";
+
+//PBS
+"origin=Proxmox,codename=${distro_codename},label=Proxmox Backup System Debian Repository";
+"origin=Debian,codename=${distro_codename}-updates,label=Debian";
+
+//openvpn
+"origin=Freight,codename=${distro_codename},label=Freight";

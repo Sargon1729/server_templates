@@ -31,7 +31,9 @@ Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,codename=${distro_codename},label=Debian";
         "origin=Debian,codename=${distro_codename},label=Debian-Security";
         "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
-        "origin=Proxmox,codename=${distro_codename},label=Proxmox Debian Repository";
+
+        "origin=Debian,codename=${distro_codename}-updates,label=Debian";
+//      "o=Debian Backports,n=${distro_codename}-backports,l=Debian Backports";
 //      "o=Debian Backports,n=${distro_codename}-backports,l=Debian Backports";
 
         // Archive or Suite based matching:
@@ -130,7 +132,7 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
 //Acquire::http::Dl-Limit "70";
 
 // Enable logging to syslog. Default is False
-// Unattended-Upgrade::SyslogEnable "false";
+ Unattended-Upgrade::SyslogEnable "true";
 
 // Specify syslog facility. Default is daemon
 // Unattended-Upgrade::SyslogFacility "daemon";
@@ -144,11 +146,11 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
 // Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
 
 // Verbose logging
-// Unattended-Upgrade::Verbose "false";
+ Unattended-Upgrade::Verbose "false";
 
 // Print debugging information both in unattended-upgrades and
 // in unattended-upgrade-shutdown
-// Unattended-Upgrade::Debug "false";
+ Unattended-Upgrade::Debug "true";
 
 // Allow package downgrade if Pin-Priority exceeds 1000
 // Unattended-Upgrade::Allow-downgrade "false";
