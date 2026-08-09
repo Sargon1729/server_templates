@@ -8,3 +8,4 @@
 
 //openvpn
 "origin=Freight,codename=${distro_codename},label=Freight";
+"origin=Debian,codename=${distro_codename}-updates,label=Debian";

@@ -125,7 +125,7 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
 // If automatic reboot is enabled and needed, reboot at the specific
 // time instead of immediately
 //  Default: "now"
-//Unattended-Upgrade::Automatic-Reboot-Time "02:00";
+Unattended-Upgrade::Automatic-Reboot-Time "02:00";
 
 // Use apt bandwidth limit feature, this example limits the download
 // speed to 70kb/sec
@@ -135,7 +135,7 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
  Unattended-Upgrade::SyslogEnable "true";
 
 // Specify syslog facility. Default is daemon
-// Unattended-Upgrade::SyslogFacility "daemon";
+ Unattended-Upgrade::SyslogFacility "daemon";
 
 // Download and install upgrades only on AC power
 // (i.e. skip or gracefully stop updates on battery)
