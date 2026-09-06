@@ -9,3 +9,7 @@
 //openvpn
 "origin=Freight,codename=${distro_codename},label=Freight";
 "origin=Debian,codename=${distro_codename}-updates,label=Debian";
+
+//browsers
+"origin=LibreWolf Software,codename=librewolf,label=librewolf";
+"origin=Brave Sofware,codename=stable,label=Brave Browser";
