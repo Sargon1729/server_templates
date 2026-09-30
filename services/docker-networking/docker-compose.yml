@@ -1,0 +1,49 @@
+services:
+  netshoot-front:
+    image: nicolaka/netshoot
+    networks:
+      backend:
+      frontend:
+        ipv4_address: 172.34.5.10
+    command: ["sleep", "infinity"] # this gives the container a process to run
+    restart: unless-stopped
+
+  netshoot-front2:
+    image: nicolaka/netshoot
+    networks:
+      backend:
+      frontend:
+        ipv4_address: 172.34.5.10
+    command: ["sleep", "infinity"] # this gives the container a process to run
+    restart: unless-stopped
+
+  netshoot-back:
+    image: nicolaka/netshoot
+    networks:
+      - backend
+    command: ["sleep", "infinity"] # this gives the container a process to run
+    restart: unless-stopped
+
+  nginx-hello-back:
+    image: nginxdemos/hello
+    networks:
+      - backend
+    ports:
+      - 81:80
+
+  nginx-hello-front:
+    image: nginxdemos/hello
+    networks:
+        backend:
+        frontend:
+          ipv4_address: 172.34.5.11
+    ports:
+      - 80:80
+
+
+networks:
+  backend: {}
+  frontend:
+    external: true
+  frontend2:
+    external: true
